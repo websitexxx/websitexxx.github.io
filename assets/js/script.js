@@ -94,3 +94,17 @@ toggleSwitch.addEventListener("change", switchTheme);
     })()),
         n();
 })(window, document);
+// Tạo các tuyết rơi
+for (let i = 0; i < 10; i++) {
+    createSnowflake(i);
+}
+
+function createSnowflake(i) {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.style.left = `${Math.random() * 100}vw`; /* Vị trí ngẫu nhiên trên trục x */
+    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; /* Độ dài chu kỳ ngẫu nhiên */
+    snowflake.style.setProperty('--i', i); /* Truyền giá trị --i để phân biệt thời gian khởi đầu */
+
+    document.querySelector('.snowflakes').appendChild(snowflake);
+}
