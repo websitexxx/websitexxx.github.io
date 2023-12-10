@@ -2748,3 +2748,24 @@ i.fas.fa-check {
       transform: translateY(100vh);
   }
 }
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  animation: rainbow 1s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* Sử dụng linear-gradient để tạo màu trượt dọc */
+.footer {
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green);
+  background-size: 200% 100%; /* Tăng kích thước để trượt chậm hơn */
+}
