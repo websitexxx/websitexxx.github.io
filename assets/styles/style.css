@@ -2723,11 +2723,7 @@ i.fas.fa-check {
 .snowflake img {
   height: 17px;
 }
-body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #87CEEB; /* Màu xanh biển */
-}
+
 
 .snowflakes {
   position: fixed;
