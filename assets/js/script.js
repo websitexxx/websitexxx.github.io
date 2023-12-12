@@ -1,6 +1,6 @@
 /**
- * @Mode: NgocMinhIT
- * @Website: TrumSource.COM
+ * @Mode: Khac Viet
+ * @Website: KhacViet.website
 **/
 // Copy To Clipboard 
 function copyToClipboard(element) {
