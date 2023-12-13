@@ -2781,3 +2781,7 @@ i.fas.fa-check {
     .box-content {
       padding: 20px; /* Khoảng cách bên trong khung */
     }
+    .center-image {
+      display: block;
+      margin: auto;
+  }
