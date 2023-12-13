@@ -2771,7 +2771,7 @@ i.fas.fa-check {
 }
     /* Định dạng khung bo góc */
     .rounded-box {
-      width: max-content; /* Rộng theo kích cỡ của nội dung */
+      width: 60vh; /* Rộng theo kích cỡ của nội dung */
       border: 2px solid #333; /* Độ dày và màu sắc đường viền */
       border-radius: 10px; /* Bán kính của góc bo */
       overflow: hidden; /* Ẩn nội dung vượt qua khung bo */
@@ -2784,4 +2784,32 @@ i.fas.fa-check {
     .center-image {
       display: block;
       margin: auto;
-  }
+    }
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Nền màu #fff0dd */
+    .background {
+      width: 500px;
+      height: 100vh; /* Chiều cao của nền */
+      background-color: #fff0dd;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1; /* Đặt màu nền phía sau ảnh */
+    }
+
+    /* Hình ảnh của bạn */
+    .image {
+      width: 150px; /* Đặt chiều rộng mong muốn */
+      height: auto; /* Giữ tỷ lệ khung hình */
+      z-index: 1; /* Đặt ảnh trước màu nền */
+    }
