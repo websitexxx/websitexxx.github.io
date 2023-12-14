@@ -2771,7 +2771,7 @@ i.fas.fa-check {
 }
     /* Định dạng khung bo góc */
     .rounded-box {
-      width: 60vh; /* Rộng theo kích cỡ của nội dung */
+      width: 60vh; /* Rộng kích cỡ 60vh */
       border: 2px solid #333; /* Độ dày và màu sắc đường viền */
       border-radius: 10px; /* Bán kính của góc bo */
       overflow: hidden; /* Ẩn nội dung vượt qua khung bo */
@@ -2815,4 +2815,38 @@ i.fas.fa-check {
     }
 h1{
   text-align: center;
+}
+@keyframes blink {
+  0%, 100% { color: yellow; }
+  50% { color: rgb(210, 2, 210); }
+
+}
+
+h1 {
+  animation: blink 1000ms infinite;
+}
+.box {
+  width: 60vh;
+  background-color: #fff0dd;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 20px;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  background-color: #fff0dd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.colored-button {
+  background-color: #ff00ee;/* Màu nền của nút ấn */
+  color: #fff; /* Màu chữ của nút ấn */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.colored-button:hover {
+  background-color:  rgb(249, 241, 0); /* Màu nền khi nút ấn được di chuột qua */
 }
