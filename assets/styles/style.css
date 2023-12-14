@@ -2813,15 +2813,3 @@ i.fas.fa-check {
       height: auto; /* Giữ tỷ lệ khung hình */
       z-index: 1; /* Đặt ảnh trước màu nền */
     }
-h1{
-  text-align: center;
-}
-@keyframes blink {
-  0%, 100% { color: yellow; }
-  50% { color: rgb(210, 2, 210); }
-
-}
-
-h1 {
-  animation: blink 1000ms infinite;
-}
