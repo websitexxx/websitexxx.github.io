@@ -2790,7 +2790,7 @@ i.fas.fa-check {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+/*    justify-content: center;*/
       min-height: 100vh;
       position: relative;
     }
@@ -2798,7 +2798,7 @@ i.fas.fa-check {
     /* Nền màu #fff0dd */
     .background {
       width: 500px;
-      height: 100vh; /* Chiều cao của nền */
+      height: 999vh; /* Chiều cao của nền */
       background-color: #fff0dd;
       position: absolute;
       top: 0;
@@ -2813,3 +2813,6 @@ i.fas.fa-check {
       height: auto; /* Giữ tỷ lệ khung hình */
       z-index: 1; /* Đặt ảnh trước màu nền */
     }
+h1{
+  text-align: center;
+}
