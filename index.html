@@ -90,6 +90,31 @@ h1 {
   </style>
 </head>
 <body>
+  <script>// script.js
+    function updateGreeting() {
+        const currentHour = new Date().getHours();
+        const currentTime = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+        
+        let greetingMessage = "";
+    
+        if (currentHour >= 0 && currentHour < 11) {
+            greetingMessage = "Chào Buổi Sáng";
+        } else if (currentHour >= 11 && currentHour < 14) {
+            greetingMessage = "Chào Buổi Trưa";
+        } else if (currentHour >= 14 && currentHour < 18) {
+            greetingMessage = "Chào Buổi Chiều";
+        } else {
+            greetingMessage = "Chào Buổi Tối";
+        }
+    
+        document.getElementById("greeting").textContent = greetingMessage + ` (${currentTime})`;
+    }
+    
+    window.addEventListener('load', updateGreeting);
+    setInterval(updateGreeting, 60000);
+    setInterval(updateClock, 1000);
+    updateClock();
+    </script>
     <!-- Hình ảnh của bạn -->
     <img class="image" src="/assets/img/logoweb.jpg" alt="logo" height="100px">
     <!-- Nền màu #fff0dd -->
@@ -98,7 +123,7 @@ h1 {
   <div class="rounded-box">
     <!-- Nội dung bên trong khung -->
     <div class="box-content">
-      <h1>                <img src="https://cdn.discordapp.com/emojis/1170595652703633419.gif" width="50"/>Xin Chào<img src="https://cdn.discordapp.com/emojis/1170595652703633419.gif" width="50"/>                      </h1>
+      <h1>                <img src="https://cdn.discordapp.com/emojis/1170595652703633419.gif" width="50"/><h1 id="greeting"></h1>                      </h1>
       <h3>Tên tớ là:<h4> Hà Khắc Việt  <img src="/assets/img/tich-xanh.png" style="height: 24px;" /></b></h4>
       <p>
         Chào mừng bạn đến với không gian vô tri đầy kỳ bí của trang web mà tôi tự tay xây dựng! 🌌 Tại đây, từng trang, từng góc nhỏ đều đánh thức trí tò mò và sự sáng tạo không ngừng. 🚀 Trang web không chỉ là một điểm đến, mà là cuộc phiêu lưu huyền bí, nơi những ý tưởng mới mẻ và không giới hạn mọc lên như những bông hoa kỳ diệu. 🌸🌟
