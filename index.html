@@ -103,31 +103,38 @@ h1 {
   </style>
 </head>
 <body>
-  <script>// script.js
+  <script>
     function updateGreeting() {
-        const currentHour = new Date().getHours();
-        const currentTime = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
-        
-        let greetingMessage = "";
-    
-        if (currentHour >= 0 && currentHour < 11) {
-            greetingMessage = "Chào Buổi Sáng";
-        } else if (currentHour >= 11 && currentHour < 14) {
-            greetingMessage = "Chào Buổi Trưa";
-        } else if (currentHour >= 14 && currentHour < 18) {
-            greetingMessage = "Chào Buổi Chiều";
-        } else {
-            greetingMessage = "Chào Buổi Tối";
-        }
-    
-        document.getElementById("greeting").textContent = greetingMessage + ` (${currentTime})`;
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const currentTime = new Date().toLocaleTimeString('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      });
+  
+      let greetingMessage = '';
+      const currentHour = new Date().getHours();
+  
+      if (currentHour >= 0 && currentHour < 11) {
+        greetingMessage = 'Chào Buổi Sáng';
+      } else if (currentHour >= 11 && currentHour < 14) {
+        greetingMessage = 'Chào Buổi Trưa';
+      } else if (currentHour >= 14 && currentHour < 18) {
+        greetingMessage = 'Chào Buổi Chiều';
+      } else {
+        greetingMessage = 'Chào Buổi Tối';
+      }
+  
+      document.getElementById('greeting').textContent = greetingMessage + ` (${currentTime})`;
     }
-    
+  
     window.addEventListener('load', updateGreeting);
     setInterval(updateGreeting, 60000);
     setInterval(updateClock, 1000);
     updateClock();
-    </script>
+  </script>
+  
+  
     <!-- Hình ảnh của bạn -->
     <img class="image" src="/assets/img/logoweb.jpg" alt="logo" height="100px">
     <!-- Nền màu #fff0dd -->
