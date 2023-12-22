@@ -120,18 +120,9 @@ a:hover{
     <h1>Đang Bảo Trì</h1>
     <p>Chúng tôi đang nâng cấp hệ thống để mang đến trải nghiệm tốt nhất cho bạn. Hãy quay lại sau.</p>
     <div id="real-time"></div>
+    <p>hẹn  <div id="countdown"></div></p>
 </div>
 
-<div id="weather-info">
-    <div class="weather-card" id="weather-north">
-        <h2>Hà Nội</h2>
-        <p class="weather-info" id="weather-north-info"></p>
-    </div>
-    <div class="weather-card" id="weather-south">
-        <h2>Thành phố Hồ Chí Minh</h2>
-        <p class="weather-info" id="weather-south-info"></p>
-    </div>
-</div>
 
 <script>
  function updateClock() {
@@ -150,32 +141,32 @@ a:hover{
         // Update every second
         setTimeout(updateClock, 1000);
     }
+    document.addEventListener("DOMContentLoaded", function () {
+    // Ngày đích đến (1/1/2024)
+    const targetDate = new Date("January 1, 2024 00:00:00").getTime();
 
-    // Function to fetch and display weather information from OpenWeatherMap API
-    async function fetchWeather() {
-        try {
-            // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
-            const apiKey = '5efe27f41f870fead44eed9abe4e7751';
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/group?id=1581130,1566083,1580578&units=metric&appid=${apiKey}`);
-            const data = await response.json();
+    // Cập nhật đếm ngược mỗi giây
+    const countdownInterval = setInterval(function () {
+        const currentDate = new Date().getTime();
+        const timeRemaining = targetDate - currentDate;
 
-            // Extract weather information for each location
-            const weatherNorth = `Miền Bắc: ${data.list[0].main.temp}°C, ${data.list[0].weather[0].description}`;
-            const weatherSouth = `Miền Nam: ${data.list[2].main.temp}°C, ${data.list[2].weather[0].description}`;
+        // Tính toán thời gian còn lại
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.getElementById('weather-north-info').innerText = weatherNorth;
-            document.getElementById('weather-central-info').innerText = weatherCentral;
-            document.getElementById('weather-south-info').innerText = weatherSouth;
-        } catch (error) {
-            console.error('Error fetching weather data:', error);
+        // Hiển thị đếm ngược trên trang web
+        document.getElementById("countdown").innerHTML = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+
+        // Kiểm tra nếu đã đạt đến ngày đích đến
+        if (timeRemaining < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown").innerHTML = "Đã đến ngày 1/1/2024!";
         }
-    }
+    }, 1000);
+});
 
-    // Call functions on page load
-    window.onload = function () {
-        updateClock();
-        fetchWeather();
-    };
 </script>
 <footer class="footer">
     © 2023 Vận Hành Bởi Khắc Việt 
