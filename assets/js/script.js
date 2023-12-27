@@ -108,3 +108,28 @@ function createSnowflake(i) {
 
     document.querySelector('.snowflakes').appendChild(snowflake);
 }
+const book = document.querySelector('.book');
+let currentPage = 0;
+
+function turnPage() {
+    if (currentPage < book.children.length - 1) {
+        currentPage++;
+        updateBook();
+        animatePageTurn();
+    }
+}
+
+function updateBook() {
+    const angle = -currentPage * 180;
+    book.style.transform = `rotateY(${angle}deg)`;
+}
+
+function animatePageTurn() {
+    const currentPageElement = book.children[currentPage];
+    currentPageElement.classList.add('turn-page');
+
+    // Remove the 'turn-page' class after the animation is complete
+    currentPageElement.addEventListener('transitionend', () => {
+        currentPageElement.classList.remove('turn-page');
+    }, { once: true });
+}
