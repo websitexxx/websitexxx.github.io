@@ -133,3 +133,26 @@ function animatePageTurn() {
         currentPageElement.classList.remove('turn-page');
     }, { once: true });
 }
+    // Replace 'your-access-token' with your actual access token
+    const accessToken = 'EAABwzLixnjYBOyeZB4WWhJkfM3Opc3nagAFZBQzbauunWOwQSI73LDSMpsbQ5HMZCeYcLpRCy83NYCIRSlCokUQWoY9QDDroGaLF2cLW6foXDAPeBI3uIgTlgNphpCwZB1C64J1ZAKunIsP66kug6f8CdN0o5ClB0w2p8ZAZCZAYedpkTuvT1ZBg9EZCF6UAZAQp6IM47K1BavXkiFRCtpIWR7VwI4ZD';
+    const userId = '1289398076';
+
+    function getFacebookFollowers() {
+      fetch(`https://graph.facebook.com/v12.0/${userId}?fields=friends&access_token=${accessToken}`)
+        .then(response => response.json())
+        .then(data => {
+          const followersCount = data.friends.summary.total_count;
+          document.getElementById('followersCount').textContent = `Followers: ${followersCount}`;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          document.getElementById('followersCount').textContent = 'Error fetching data';
+        });
+    }
+
+    // Update followers count initially
+    getFacebookFollowers();
+
+    // Update followers count every 5 minutes (adjust as needed)
+    setInterval(getFacebookFollowers, 300000);
+
