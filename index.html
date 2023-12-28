@@ -1,174 +1,89 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
+ <!-- 1. Trang Chủ
+   1.1 Giới Thiệu Bản Thân
+       1.1.1 Hình Ảnh Cá Nhân
+       1.1.2 Tên và Chức Vụ
+       1.1.3 Slogan hoặc Phương Châm Sống
+
+   1.2 Sản Phẩm
+       1.2.1 Danh Sách Sản Phẩm/ Dự Án
+       1.2.2 Hình Ảnh và Mô Tả Sản Phẩm
+       1.2.3 Nút Xem Chi Tiết
+
+   1.3 Kinh Nghiệm
+       1.3.1 Lý Lịch Học Vấn
+       1.3.2 Lịch Sử Làm Việc
+       1.3.3 Dự Án/ Nhiệm Vụ Nổi Bật
+       1.3.4 Chứng Chỉ và Giải Thưởng
+
+   1.4 Blog/ Bài Viết
+       1.4.1 Các Bài Viết Cá Nhân
+       1.4.2 Chia Sẻ Kinh Nghiệm và Kiến Thức
+       1.4.3 Nút Xem Thêm Bài Viết
+
+   1.5 Liên Hệ
+       1.5.1 Form Liên Hệ
+       1.5.2 Thông Tin Liên Hệ
+       1.5.3 Mạng Xã Hội và Liên Kết Khác
+
+   1.6 Footer
+       1.6.1 Liên Kết Nhanh
+       1.6.2 Chính Sách và Điều Khoản
+       1.6.3 Bản Quyền và Thông Tin Công Ty
+       1.6.4 Mạng Xã Hội
+
+2. Chân Trang
+   2.1 Liên Kết Nhanh
+   2.2 Chính Sách và Điều Khoản
+   2.3 Mạng Xã Hội
+   2.4 Liên Kết Đối Tác
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
-    <!-- Thêm đoạn mã sau vào phần head của trang web -->
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <style>
-html,
-body{
-  cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2UiwkC42_TYds4b_D8KSno9kj9OIihVmwdYfTanM12xQC9dlWLaDpY8UM74mscXm2OJwMQ30HC-OEvpvSYNRAFttVLIiIUmiFCDx8oRMYkdOTc6nxAp0nbWyzz9qGTXCuCoHizwiIiGcZPHTOhigPrvlrhA0d7yHlq3lRr0Bczp5QlIKmu5mSo49_/s70/curmiku6.png"), auto;
-}
-a:hover{
-  cursor:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinyFDof7iQ3YFkue7SgoEgD0p5qnPA72KGGkQVpF_bYb3wwHAbhCn_yCXvWgCt_C7RKSNJDN1GacZYndk9tXXP0oC841r7p1UQv1jdNcGo5m1huthXutLaX59XJXXgoeryxQ0U8U0oBYwNoph23irkUJqXdMJOx-HHyXAUVr85pAXjgOR9uYnZMgzZ/s1600/curmiku9.png"), auto;
-}
-        body {
-            background-color: #1f1f1f;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            flex-direction: column; /* Chuyển đổi sang chiều dọc để đặt thời tiết dưới banner */
-        }
-
-        .maintenance-container {
-            max-width: 600px;
-            padding: 20px;
-            background-color: #2c3e50; /* Màu nền container */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            color: #ecf0f1; /* Màu chữ trong container */
-            margin-bottom: 20px; /* Thêm khoảng cách giữa banner và thời tiết */
-        }
-
-        h1 {
-            color: #4caf50;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        .tech-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg); /* Sửa giá trị để quay đầy đủ vòng */
-            }
-        }
-
-        .rotate {
-            animation: rotate 2s linear infinite;
-        }
-
-        #weather-info {
-            display: flex;
-            justify-content: space-around;
-            width: 100%; /* Chắc chắn rằng các thẻ thời tiết chiếm đủ chiều rộng */
-        }
-
-        .weather-card {
-            background-color: #34495e; /* Màu nền thẻ thời tiết */
-            padding: 10px;
-            border-radius: 8px;
-            margin: 10px;
-            flex: 1; /* Chia đều không gian giữa các thẻ thời tiết */
-        }
-
-        h2 {
-            color: #3498db; /* Màu chữ tiêu đề thời tiết */
-        }
-
-        p.weather-info {
-            font-size: 16px;
-            margin: 5px 0;
-        }
-        .footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  padding: 10px;
-  animation: nhapnhay 1s linear infinite;
-}
-
-@keyframes nhapnhay {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 0%; }
-}
-
-/* Sử dụng linear-gradient để tạo màu trượt dọc */
-.footer {
-  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green);
-  background-size: 400% 200%; /* Tăng kích thước để trượt chậm hơn */
-}
-#real-time {
-            font-size: 24px;
-            margin-top: 20px; /* Thêm khoảng cách giữa thời tiết và thời gian */
-        }
-    </style>
-</head>
-<body>
-
-<div class="maintenance-container">
-    <h1>Đang Bảo Trì</h1>
-    <p>Chúng tôi đang nâng cấp hệ thống để mang đến trải nghiệm tốt nhất cho bạn. Hãy quay lại sau.</p>
-    <div id="countdown"></div>
-</div>
+    <title> [ Trang chủ ] </title>
+    <link href="https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-1/411998387_10224562792359163_7023806312092598259_n.jpg?stp=dst-jpg_p320x320&_nc_cat=106&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeH-8vQbiivrIPKqS8FI8v8qo1910ov3S7ejX3XSi_dLt7LvarZ7rVTEZHpTtVKiUMk&_nc_ohc=bOiLoGCHxJEAX_38JEZ&_nc_ht=scontent.fhan3-4.fna&oh=00_AfBjXe1sN_59D1GPpI1Qt7n_Qedm79tYRfqDxptqaA5Akw&oe=658F0511" rel="shortcut icon" type="image/x-icon" />
+    <meta content="Thông Tin Thanh Toán Của Khắc Việt  !" property="og:title" />
+    <meta content="https://khacviet.website/" property="og:url" />
+    <meta content="https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-1/411998387_10224562792359163_7023806312092598259_n.jpg?stp=dst-jpg_p320x320&_nc_cat=106&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeH-8vQbiivrIPKqS8FI8v8qo1910ov3S7ejX3XSi_dLt7LvarZ7rVTEZHpTtVKiUMk&_nc_ohc=bOiLoGCHxJEAX_38JEZ&_nc_ht=scontent.fhan3-4.fna&oh=00_AfBjXe1sN_59D1GPpI1Qt7n_Qedm79tYRfqDxptqaA5Akw&oe=658F0511" property="og:image" />
+    <meta content="website" property="og:type" />
+    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css?ver=2.1" />
+ </head>
+ <body>
 
 
-<script>
- function updateClock() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
 
-        // Pad single digit minutes and seconds with a leading zero
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-
-        var currentTime = hours + ':' + minutes + ':' + seconds;
-        document.getElementById('real-time').innerText = `Bây giờ là: ${currentTime}`;
-
-        // Update every second
-        setTimeout(updateClock, 1000);
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-    // Ngày đích đến (1/1/2024)
-    const targetDate = new Date("January 1, 2024 00:00:00").getTime();
-
-    // Cập nhật đếm ngược mỗi giây
-    const countdownInterval = setInterval(function () {
-        const currentDate = new Date().getTime();
-        const timeRemaining = targetDate - currentDate;
-
-        // Tính toán thời gian còn lại
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-        // Hiển thị đếm ngược trên trang web
-        document.getElementById("countdown").innerHTML = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
-
-        // Kiểm tra nếu đã đạt đến ngày đích đến
-        if (timeRemaining < 0) {
-            clearInterval(countdownInterval);
-            document.getElementById("countdown").innerHTML = "Đã đến ngày 1/1/2024!";
-        }
-    }, 1000);
-});
-
-</script>
+    <center>
+        <label class="theme-switch">
+            <input type="checkbox" class="theme-switch__checkbox" id="checkbox" value="yes">
+            <div class="theme-switch__container">
+              <div class="theme-switch__clouds"></div>
+              <div class="theme-switch__stars-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688ZM31 23.3545C32.1114 23.2995 33.0551 22.8503 33.8313 22.0069C34.6075 21.1635 34.9956 20.1642 34.9956 19C34.9956 20.1642 35.3837 21.1635 36.1599 22.0069C36.9361 22.8503 37.8798 23.2903 39 23.3545C38.2679 23.3911 37.5976 23.602 36.9802 24.0053C36.3716 24.3995 35.8864 24.9312 35.5248 25.5913C35.172 26.2513 34.9956 26.9572 34.9956 27.7273C34.9956 26.563 34.6075 25.5546 33.8313 24.7112C33.0551 23.8587 32.1114 23.4095 31 23.3545ZM0 36.3545C1.11136 36.2995 2.05513 35.8503 2.83131 35.0069C3.6075 34.1635 3.99559 33.1642 3.99559 32C3.99559 33.1642 4.38368 34.1635 5.15987 35.0069C5.93605 35.8503 6.87982 36.2903 8 36.3545C7.26792 36.3911 6.59757 36.602 5.98015 37.0053C5.37155 37.3995 4.88644 37.9312 4.52481 38.5913C4.172 39.2513 3.99559 39.9572 3.99559 40.7273C3.99559 39.563 3.6075 38.5546 2.83131 37.7112C2.05513 36.8587 1.11136 36.4095 0 36.3545ZM56.8313 24.0069C56.0551 24.8503 55.1114 25.2995 54 25.3545C55.1114 25.4095 56.0551 25.8587 56.8313 26.7112C57.6075 27.5546 57.9956 28.563 57.9956 29.7273C57.9956 28.9572 58.172 28.2513 58.5248 27.5913C58.8864 26.9312 59.3716 26.3995 59.9802 26.0053C60.5976 25.602 61.2679 25.3911 62 25.3545C60.8798 25.2903 59.9361 24.8503 59.1599 24.0069C58.3837 23.1635 57.9956 22.1642 57.9956 21C57.9956 22.1642 57.6075 23.1635 56.8313 24.0069ZM81 25.3545C82.1114 25.2995 83.0551 24.8503 83.8313 24.0069C84.6075 23.1635 84.9956 22.1642 84.9956 21C84.9956 22.1642 85.3837 23.1635 86.1599 24.0069C86.9361 24.8503 87.8798 25.2903 89 25.3545C88.2679 25.3911 87.5976 25.602 86.9802 26.0053C86.3716 26.3995 85.8864 26.9312 85.5248 27.5913C85.172 28.2513 84.9956 28.9572 84.9956 29.7273C84.9956 28.563 84.6075 27.5546 83.8313 26.7112C83.0551 25.8587 82.1114 25.4095 81 25.3545ZM136 36.3545C137.111 36.2995 138.055 35.8503 138.831 35.0069C139.607 34.1635 139.996 33.1642 139.996 32C139.996 33.1642 140.384 34.1635 141.16 35.0069C141.936 35.8503 142.88 36.2903 144 36.3545C143.268 36.3911 142.598 36.602 141.98 37.0053C141.372 37.3995 140.886 37.9312 140.525 38.5913C140.172 39.2513 139.996 39.9572 139.996 40.7273C139.996 39.563 139.607 38.5546 138.831 37.7112C138.055 36.8587 137.111 36.4095 136 36.3545ZM101.831 49.0069C101.055 49.8503 100.111 50.2995 99 50.3545C100.111 50.4095 101.055 50.8587 101.831 51.7112C102.607 52.5546 102.996 53.563 102.996 54.7273C102.996 53.9572 103.172 53.2513 103.525 52.5913C103.886 51.9312 104.372 51.3995 104.98 51.0053C105.598 50.602 106.268 50.3911 107 50.3545C105.88 50.2903 104.936 49.8503 104.16 49.0069C103.384 48.1635 102.996 47.1642 102.996 46C102.996 47.1642 102.607 48.1635 101.831 49.0069Z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <div class="theme-switch__circle-container">
+                <div class="theme-switch__sun-moon-container">
+                  <div class="theme-switch__moon">
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+    </center>  
+ </body>
+        <!-- JavaScripts -->
+        <script src="/assets/js/jquery-3.4.1.min.js"></script>
+        <script src="/assets/js/script.js"></script>
+        <script src="/assets/js/sweetalert2.all.min.js"></script>
+        <script src="/assets/js/plugins.min.js"></script>
+        <script src="/assets/js/common.js"></script>
 <footer class="footer">
-    © 2023 Vận Hành Bởi Khắc Việt 
-   </footer>
-</body>
-</html>
+        © 2023 Vận Hành Bởi Khắc Việt 
+</footer>
+ </html>
