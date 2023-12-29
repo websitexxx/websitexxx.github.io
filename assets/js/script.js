@@ -106,7 +106,7 @@ function createSnowflake(i) {
     snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; /* Độ dài chu kỳ ngẫu nhiên */
     snowflake.style.setProperty('--i', i); /* Truyền giá trị --i để phân biệt thời gian khởi đầu */
 
-    document.querySelector('.snowflakes').appendChild(snowflake);
+document.querySelector('.snowflakes').appendChild(snowflake);
 }
 const book = document.querySelector('.book');
 let currentPage = 0;
@@ -133,26 +133,32 @@ function animatePageTurn() {
         currentPageElement.classList.remove('turn-page');
     }, { once: true });
 }
-    // Replace 'your-access-token' with your actual access token
-    const accessToken = 'EAABwzLixnjYBOyeZB4WWhJkfM3Opc3nagAFZBQzbauunWOwQSI73LDSMpsbQ5HMZCeYcLpRCy83NYCIRSlCokUQWoY9QDDroGaLF2cLW6foXDAPeBI3uIgTlgNphpCwZB1C64J1ZAKunIsP66kug6f8CdN0o5ClB0w2p8ZAZCZAYedpkTuvT1ZBg9EZCF6UAZAQp6IM47K1BavXkiFRCtpIWR7VwI4ZD';
-    const userId = '1289398076';
-
-    function getFacebookFollowers() {
-      fetch(`https://graph.facebook.com/v12.0/${userId}?fields=friends&access_token=${accessToken}`)
-        .then(response => response.json())
-        .then(data => {
-          const followersCount = data.friends.summary.total_count;
-          document.getElementById('followersCount').textContent = `Followers: ${followersCount}`;
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-          document.getElementById('followersCount').textContent = 'Error fetching data';
-        });
-    }
-
-    // Update followers count initially
-    getFacebookFollowers();
-
-    // Update followers count every 5 minutes (adjust as needed)
-    setInterval(getFacebookFollowers, 300000);
-
+      document.addEventListener('DOMContentLoaded', function () {
+        // Thay 'YOUR_API_KEY' bằng API key của bạn và 'Hanoi' bằng thành phố bạn quan tâm
+        const api_key = '5efe27f41f870fead44eed9abe4e7751';
+        const city = 'Hanoi';
+    
+        const temperatureElement = document.getElementById('temperature');
+        const descriptionElement = document.getElementById('description');
+    
+        function getWeather() {
+            const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+    
+            fetch(api_url)
+                .then(response => response.json())
+                .then(data => {
+                    const temperature = data.main.temp;
+                    const description = data.weather[0].description;
+    
+                    temperatureElement.textContent = `Nhiệt độ: ${temperature}°C`;
+                    descriptionElement.textContent = `Thời tiết: ${description}`;
+                })
+                .catch(error => {
+                    console.error('Lỗi khi lấy thông tin thời tiết:', error);
+                    temperatureElement.textContent = 'Không thể lấy thông tin thời tiết';
+                });
+        }
+    
+        getWeather();
+    });
+    
