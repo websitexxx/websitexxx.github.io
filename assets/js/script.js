@@ -94,20 +94,19 @@ toggleSwitch.addEventListener("change", switchTheme);
     })()),
         n();
 })(window, document);
-// Tạo các tuyết rơi
-for (let i = 0; i < 10; i++) {
-    createSnowflake(i);
-}
+// Tạo các pháo hoa
+function createFirework() {
+    const firework = document.createElement('div');
+    firework.className = 'firework';
+    firework.style.left = `${Math.random() * window.innerWidth}px`;
+    document.body.appendChild(firework);
 
-function createSnowflake(i) {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = `${Math.random() * 100}vw`; /* Vị trí ngẫu nhiên trên trục x */
-    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; /* Độ dài chu kỳ ngẫu nhiên */
-    snowflake.style.setProperty('--i', i); /* Truyền giá trị --i để phân biệt thời gian khởi đầu */
+    setTimeout(() => {
+      document.body.removeChild(firework);
+    }, 2000); // Thời gian tồn tại của pháo bông, có thể điều chỉnh theo ý muốn
+  }
 
-document.querySelector('.snowflakes').appendChild(snowflake);
-}
+  setInterval(createFirework, 2000); // T
 const book = document.querySelector('.book');
 let currentPage = 0;
 
