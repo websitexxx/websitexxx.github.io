@@ -132,32 +132,11 @@ function animatePageTurn() {
         currentPageElement.classList.remove('turn-page');
     }, { once: true });
 }
-      document.addEventListener('DOMContentLoaded', function () {
-        // Thay 'YOUR_API_KEY' bằng API key của bạn và 'Hanoi' bằng thành phố bạn quan tâm
-        const api_key = '5efe27f41f870fead44eed9abe4e7751';
-        const city = 'Hanoi';
-    
-        const temperatureElement = document.getElementById('temperature');
-        const descriptionElement = document.getElementById('description');
-    
-        function getWeather() {
-            const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
-    
-            fetch(api_url)
-                .then(response => response.json())
-                .then(data => {
-                    const temperature = data.main.temp;
-                    const description = data.weather[0].description;
-    
-                    temperatureElement.textContent = `Nhiệt độ: ${temperature}°C`;
-                    descriptionElement.textContent = `Thời tiết: ${description}`;
-                })
-                .catch(error => {
-                    console.error('Lỗi khi lấy thông tin thời tiết:', error);
-                    temperatureElement.textContent = 'Không thể lấy thông tin thời tiết';
-                });
-        }
-    
-        getWeather();
+    // Lấy đối tượng văn bản theo id
+    var myText = document.getElementById("myText");
+
+    // Thêm sự kiện click vào văn bản
+    myText.addEventListener("click", function() {
+        // Hiển thị thông báo
+        alert("Thật đó huhu🥹");
     });
-    
