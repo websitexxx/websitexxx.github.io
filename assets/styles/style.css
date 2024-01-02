@@ -3054,7 +3054,7 @@ i.fas.fa-check {
 --------------------------------------------*/
 .card {
   position: absolute;
-  top: 60%; /* Điều chỉnh giá trị này để thay đổi vị trí xuống dưới */
+  top: 55%; /* Điều chỉnh giá trị này để thay đổi vị trí xuống dưới */
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
