@@ -2894,7 +2894,9 @@ i.fas.fa-check {
 :root {
   --gradient-colors: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green);
 }
-
+/* -------------------------------------
+--------- Footer
+------------------------------------- */
 .footer {
   text-align: center;
   position: fixed;
@@ -2919,7 +2921,9 @@ i.fas.fa-check {
   background-size: 200% 100%; /* Tăng kích thước để trượt chậm hơn */
 }
 
-
+/* ----------------------------------------
+----- Button
+-----------------------------------------*/
 
 .tooltip-container {
   display: flex;
@@ -3054,18 +3058,18 @@ i.fas.fa-check {
 --------------------------------------------*/
 .card {
   position: absolute;
-  top: 55%; /* Điều chỉnh giá trị này để thay đổi vị trí xuống dưới */
+  top: 60%; /* Điều chỉnh giá trị này để thay đổi vị trí xuống dưới */
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60vw;
+  width: 90vw;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   padding: 32px;
   overflow: hidden;
   border-radius: 20px;
-  background-color: #000000;
+  background-color: #0b0000;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
