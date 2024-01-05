@@ -137,6 +137,15 @@ function animatePageTurn() {
 
     // Thêm sự kiện click vào văn bản
     myText.addEventListener("click", function() {
-        // Hiển thị thông báo
         alert("Thật đó huhu🥲");
     });
+/**
+ * 
+ */
+function ThongBaoChuaMo(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    $temp.remove();
+    Swal.fire("Ô hay", "Đã bảo là chưa mở rồi");
+}
