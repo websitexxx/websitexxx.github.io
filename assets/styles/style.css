@@ -2905,21 +2905,9 @@ i.fas.fa-check {
   width: 100%;
   color: white;
   padding: 5px;
-  animation: nhapnhay 1s linear infinite;
-  background: var(--gradient-colors);
-  background-size: 200% 100%;
+    background-size: 200% 100%;
 }
 
-@keyframes nhapnhay {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 0%; }
-}
-
-/* Sử dụng linear-gradient để tạo màu trượt dọc */
-.footer {
-  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green);
-  background-size: 200% 100%; /* Tăng kích thước để trượt chậm hơn */
-}
 
 /* ----------------------------------------
 ----- Button
