@@ -94,17 +94,7 @@ toggleSwitch.addEventListener("change", switchTheme);
     })()),
         n();
 })(window, document);
-// Tạo các pháo hoa
-function createFirework() {
-    const firework = document.createElement('div');
-    firework.className = 'firework';
-    firework.style.left = `${Math.random() * window.innerWidth}px`;
-    document.body.appendChild(firework);
 
-    setTimeout(() => {
-      document.body.removeChild(firework);
-    }, 2000); // Thời gian tồn tại của pháo bông, có thể điều chỉnh theo ý muốn
-  }
 
   setInterval(createFirework, 2000); // T
 const book = document.querySelector('.book');
