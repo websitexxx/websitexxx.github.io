@@ -127,7 +127,7 @@ function ThongBao(element) {
     $("body").append($temp);
     $temp.val($(element).text()).select();
     $temp.remove();
-    Swal.fire("Tin Juan Alert", "Thật Đó Huhu😿");
+    Swal.fire("Tin Juan Alert", "Thật Đó Huhu😿", "success");
 }
 /**
  * 
