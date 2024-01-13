@@ -127,7 +127,7 @@ function animatePageTurn() {
 
     // Thêm sự kiện click vào văn bản
     myText.addEventListener("click", function() {
-        alert("Thật đó huhu🥲");
+        alert("Thật đó huhu");
     });
 /**
  * 
