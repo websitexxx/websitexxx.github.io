@@ -122,13 +122,13 @@ function animatePageTurn() {
         currentPageElement.classList.remove('turn-page');
     }, { once: true });
 }
-    // Lấy đối tượng văn bản theo id
-    var myText = document.getElementById("myText");
-
-    // Thêm sự kiện click vào văn bản
-    myText.addEventListener("click", function() {
-        alert("Thật đó huhu");
-    });
+function ThongBao(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    $temp.remove();
+    Swal.fire("Tin Juan Alert", "Thật Đó Huhu😿");
+}
 /**
  * 
  */
